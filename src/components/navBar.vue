@@ -1,7 +1,10 @@
 <template>
   <div class="bar-warp">
     <image :src="buy"></image>
-    <image :src="add"></image>
+    <image
+      :src="add"
+      @click="upImage"
+    ></image>
     <image :src="vip"></image>
   </div>
 </template>
@@ -11,6 +14,8 @@ import vip from "@/assets/images/ico/会员.png";
 import add from "@/assets/images/ico/添加.png";
 import buy from "@/assets/images/ico/购买.png";
 
+import store from "@/pages/editImage/store"
+
 export default {
   data() {
     return {
@@ -18,7 +23,21 @@ export default {
       add: add,
       buy: buy
     };
-  }
+  },
+  methods: {
+    upImage:function(e){
+      console.log('upImage');
+      // 获取相册图片
+      wx.chooseImage({
+        success:function(res){
+          store.commit("changeImage",res.tempFilePaths[0]);
+          wx.navigateTo({
+            url:"/pages/editImage/main"
+          })
+        }
+      })
+    }
+  },
 };
 </script>
 

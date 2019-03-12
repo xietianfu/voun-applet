@@ -8,12 +8,13 @@
     <div class="frame">
       <image
         class="bg-frame"
-        :src="frame"
+        :src="bgFrame"
       ></image>
       <image
         class="photo"
-        :src="photo"
+        :src="photoUrl"
         mode="aspectFill"
+        @click="showT"
         alt
       ></image>
 
@@ -24,18 +25,20 @@
 <script>
 import tableLamp from "@/assets/images/scene/台灯桌面照片.png";
 import photo from "@/assets/images/照片.png";
-import frame1 from "@/assets/images/frame/相框1.png";
+import frame from "@/assets/images/frame/相框1.png";
 
 export default {
-  // props: ["wrapBackground", "frame", "photoUrl"],
+  props: [ "photoUrl","wrapBackground", "frame"],
   data() {
     return {
       // wrapBackground: wrapBackground,
+      bgFrame: frame,
       tableLampUrl: tableLamp,
-      photo: photo,
-      frame: frame1
     };
-  }
+  },
+  computed: {
+
+  },
 };
 </script>
 

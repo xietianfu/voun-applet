@@ -1,9 +1,14 @@
 {
-  "pages": ["pages/index/main", "pages/logs/main", "pages/counter/main"],
+  "pages": ["pages/index/main", "pages/logs/main", "pages/counter/main","pages/editImage/main"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Fotoever | 照片陪你",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "usingComponents": {
+    "van-tabs": "/static/vant-ui/tabs/index",
+    "van-tab": "/static/vant-ui/tab/index"
+  },
+  "debug":true
 }
