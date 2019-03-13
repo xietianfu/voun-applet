@@ -15,6 +15,11 @@
         :src="photoUrl"
         mode="aspectFill"
         @click="showT"
+        :style="{ maxWidth: 
+        zoom+'%',
+        maxHeight: 
+        zoom+'%'
+        }"
         alt
       ></image>
 
@@ -23,22 +28,26 @@
 </template>
 
 <script>
+import store from "./store";
+
 import tableLamp from "@/assets/images/scene/台灯桌面照片.png";
 import photo from "@/assets/images/照片.png";
 import frame from "@/assets/images/frame/相框1.png";
 
 export default {
-  props: [ "photoUrl","wrapBackground", "frame"],
+  props: ["photoUrl", "wrapBackground", "frame"],
   data() {
     return {
       // wrapBackground: wrapBackground,
       bgFrame: frame,
-      tableLampUrl: tableLamp,
+      tableLampUrl: tableLamp
     };
   },
   computed: {
-
-  },
+    zoom() {
+      return store.state.zoom;
+    }
+  }
 };
 </script>
 

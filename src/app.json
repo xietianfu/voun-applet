@@ -1,5 +1,10 @@
 {
-  "pages": ["pages/index/main", "pages/logs/main", "pages/counter/main","pages/editImage/main"],
+  "pages": [
+    "pages/index/main",
+    "pages/logs/main",
+    "pages/counter/main",
+    "pages/editImage/main"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -8,7 +13,8 @@
   },
   "usingComponents": {
     "van-tabs": "/static/vant-ui/tabs/index",
-    "van-tab": "/static/vant-ui/tab/index"
+    "van-tab": "/static/vant-ui/tab/index",
+    "van-slider": "/static/vant-ui/slider/index"
   },
-  "debug":true
+  "debug": true
 }
